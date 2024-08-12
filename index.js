@@ -22,7 +22,7 @@ boutonGénérer.addEventListener('click', function(){
     else {
         const typeCaractère = window.prompt('Quels types de caractères souhaitez-vous inclure dans le mot de passe (majuscules, minuscules, chiffres, symboles)?');
 
-        if ((typeCaractère.includes('majuscules') || ('minuscules') || ('chiffres') || ('symboles')) == false) {
+        if (!typeCaractère.includes('majuscules') && !typeCaractère.includes('minuscules') && !typeCaractère.includes('chiffres') && !typeCaractère.includes('symboles')) {
             alert ("Le type de caractère n'est pas valide. Veuillez vérifier l'orthographe.");
             //console.log("Le type de caractère n'est pas valide");
             return;
@@ -91,11 +91,30 @@ boutonGénérer.addEventListener('click', function(){
             console.log(motDePasse);
 
             let afficherMDP = document.getElementById('afficheMDP');
-            afficherMDP.textContent = motDePasse.join('');
+            afficherMDP.value = motDePasse.join('');
         }
 
     }
 
+});
+
+let boutonCopier = document.getElementById('boutonCopier');
+let mdpCopie = document.getElementById('mdpCopie');
+
+boutonCopier.addEventListener('click', function(){
+    let afficherMDP = document.getElementById('afficheMDP');
+
+    if (afficherMDP.value === undefined || afficherMDP.value == '' ){
+        alert('Impossible de copier le mot de passe');
+    }
+
+    else {
+        afficherMDP.select();
+        afficherMDP.setSelectionRange(0, 99999);
+
+        navigator.clipboard.writeText(afficherMDP.value);
+        mdpCopie.innerHTML = 'Votre mot de passe a été copié';
+    }
 });
 
 
