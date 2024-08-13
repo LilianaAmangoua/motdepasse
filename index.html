@@ -3,17 +3,29 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Générateur de mot de passe</title>
+        <title>Lock&Key - Générateur de mot de passe</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="style.css">
         
     </head>
     <body>
-        <h2>Générateur de mot de passe</h2>
+        <a href="index.html"><img src="images/lockkey-high-resolution-logo-black-transparent.png" alt="Logo Lock&Key"></a>
 
-        <button id="boutonGénérer">Générer un mot de passe</button>
-        <input type="text" id="afficheMDP" readonly>
-        <button id="boutonCopier">Copier</button>
-        <p id="mdpCopie"></p>
+
+        <div class="contenu-principal">
+            <h2>Générer votre mot de passe</h2>
+
+            <div class="affichage">
+                <input type="text" id="afficheMDP" readonly>
+                <button id="boutonGénérer">Générer</button>
+                <button id="boutonCopier">Copier</button>
+                <p id="mdpCopie"></p>
+            </div>
+        </div>
+
+        <p class="mentions-légales"><span>Condition d'utilisation</span> | <span>Politique de confidentialité</span></p>
 
         <script src="index.js"></script>
     </body>

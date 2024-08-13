@@ -1,0 +1,115 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+}
+
+img {
+    width: 100px;
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 30px;
+}
+
+
+.contenu-principal{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.affichage {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    row-gap: 20px;
+    width: 100%;
+}
+
+h2{
+    margin-top: 80px;
+    padding: 40px;
+    font-size: 2em;
+    font-weight: 500;
+}
+
+button, input {
+    padding: 15px 30px;
+    width: 300px;
+    border-radius: 8px;
+    border: 1px solid grey ;
+    font-size: 14px;
+    
+}
+
+button {
+    background-color: #10a37f;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+input{
+    font-size: 16px;
+    outline: none;
+    cursor: text;
+}
+
+input:focus {
+    border: 1px solid #10a37f;
+    animation-duration: 1s;
+    animation-name: bordure-qui-change;
+} 
+
+@keyframes bordure-qui-change {
+
+    0%{
+        border-left: 1px dotted #010f0c;
+    }
+
+    25% {
+        border-top: 1px dotted #013629;
+    }
+
+    50%{
+        border-right: 1px dotted #005e46;
+    }
+
+    75%{
+        border-bottom: 1px dotted #166853;
+    }
+
+    100%{
+        border: 1px solid #10a37f;
+    }
+}
+
+
+p {
+    font-size: 14px;
+}
+
+.mentions-légales {text-align: center;
+    display: flex;
+    gap: 5px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+    margin-bottom: 20px;
+
+}
+
+span {
+    color: #10a37f;
+    cursor: pointer;
+}
+
+
+

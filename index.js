@@ -4,7 +4,7 @@ const majuscules = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 
 
 const chiffres = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
 
-const symboles = ['!', '#', '$', '%', '&', '*', '+', ',', '-', '.', '/', ':', ';', '<', '=', '>', '?', '@'];
+const symboles = ['!', '#', '$', '%', '&', '*', '+', '-', '.', '/', ':', ';', '<', '=', '>', '?', '@'];
 
 
 const boutonGénérer = document.getElementById('boutonGénérer');
@@ -14,7 +14,7 @@ boutonGénérer.addEventListener('click', function(){
     let longueur = parseInt(window.prompt('Quelle est la longueur du mot de passe souhaitée ? Insérez un chiffre.'));
     
     if (longueur === '' || isNaN(longueur)) {
-        alert ("La longuer n'est pas valide");
+        alert ("La longuer n'est pas valide. Veuillez insérer un chiffre.");
         //console.log("La longuer n'est pas valide");
         return;
     }
@@ -23,12 +23,13 @@ boutonGénérer.addEventListener('click', function(){
         const typeCaractère = window.prompt('Quels types de caractères souhaitez-vous inclure dans le mot de passe (majuscules, minuscules, chiffres, symboles)?');
 
         if (!typeCaractère.includes('majuscules') && !typeCaractère.includes('minuscules') && !typeCaractère.includes('chiffres') && !typeCaractère.includes('symboles')) {
-            alert ("Le type de caractère n'est pas valide. Veuillez vérifier l'orthographe.");
+            alert ('Le type de caractère n\'est pas valide. Veuillez indiquer "majuscules", "minuscules", "chiffres" et/ou "symboles".');
             //console.log("Le type de caractère n'est pas valide");
             return;
         }
 
         else {
+
             const groupeTypeCaractères = [];
             const motDePasse = [];
 
@@ -88,6 +89,7 @@ boutonGénérer.addEventListener('click', function(){
                 motDePasse.push(randomGroupeCaractère);
             }
 
+
             console.log(motDePasse);
 
             let afficherMDP = document.getElementById('afficheMDP');
@@ -104,7 +106,7 @@ let mdpCopie = document.getElementById('mdpCopie');
 boutonCopier.addEventListener('click', function(){
     let afficherMDP = document.getElementById('afficheMDP');
 
-    if (afficherMDP.value === undefined || afficherMDP.value == '' ){
+    if (afficherMDP.value == '' ){
         alert('Impossible de copier le mot de passe');
     }
 
@@ -116,6 +118,7 @@ boutonCopier.addEventListener('click', function(){
         mdpCopie.innerHTML = 'Votre mot de passe a été copié';
     }
 });
+
 
 
 
